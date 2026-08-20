@@ -4,7 +4,4 @@ Pillow
 python-dotenv
 asgiref
 sqlparse
-celery
-kombu
-requests
-cryptography
+whitenoise
