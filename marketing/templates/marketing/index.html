@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>G-SNaIL — поиск учебников</title>
+
+    <meta
+        name="description"
+        content="G-SNaIL помогает быстро и легко найти, где скачать нужный учебник."
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            background: #f5f6f8;
+            color: #1f1f1f;
+        }
+
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+
+            margin: 0 auto;
+
+            padding: 0 20px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            padding-top: 25px;
+        }
+
+
+        .logo {
+            text-align: center;
+
+            font-size: 32px;
+            font-weight: 800;
+
+            letter-spacing: -1px;
+        }
+
+
+        .logo span {
+            color: #4caf50;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 85vh;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 40px 0;
+        }
+
+
+        .hero h1 {
+            font-size: 36px;
+
+            line-height: 1.1;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 span {
+            color: #4caf50;
+        }
+
+
+        .hero-text {
+            color: #666;
+
+            font-size: 17px;
+
+            line-height: 1.55;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .buttons {
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+
+        .button {
+            width: 100%;
+
+            padding: 17px 20px;
+
+            border-radius: 15px;
+
+            text-decoration: none;
+
+            font-size: 17px;
+
+            font-weight: 700;
+
+            transition:
+                transform 0.15s,
+                opacity 0.15s;
+        }
+
+
+        .button:active {
+            transform: scale(0.97);
+        }
+
+
+        .button-main {
+            background: #4caf50;
+
+            color: white;
+
+            box-shadow:
+                0 8px 20px
+                rgba(76, 175, 80, 0.25);
+        }
+
+
+        .button-secondary {
+            background: #202124;
+
+            color: white;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .section {
+            padding: 30px 0;
+        }
+
+
+        .about {
+            background: white;
+
+            border-radius: 22px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.05);
+        }
+
+
+        .about h2 {
+            font-size: 25px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .about p {
+            color: #666;
+
+            font-size: 16px;
+
+            line-height: 1.6;
+        }
+
+
+        .about strong {
+            color: #222;
+        }
+
+
+        /* =========================
+           ADVANTAGES
+        ========================= */
+
+        .section-title {
+            text-align: center;
+
+            font-size: 28px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .advantages {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+
+        .advantage {
+            background: white;
+
+            padding: 22px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 4px 15px
+                rgba(0, 0, 0, 0.04);
+        }
+
+
+        .advantage-icon {
+            font-size: 30px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .advantage h3 {
+            font-size: 19px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .advantage p {
+            color: #666;
+
+            line-height: 1.45;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           HOW IT WORKS
+        ========================= */
+
+        .steps {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+
+        .step {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            background: white;
+
+            padding: 18px;
+
+            border-radius: 17px;
+        }
+
+
+        .number {
+            min-width: 42px;
+
+            height: 42px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #4caf50;
+
+            color: white;
+
+            font-size: 18px;
+
+            font-weight: 700;
+        }
+
+
+        .step p {
+            color: #555;
+
+            line-height: 1.4;
+        }
+
+
+        /* =========================
+           FINAL CTA
+        ========================= */
+
+        .final {
+            text-align: center;
+
+            padding: 60px 0;
+        }
+
+
+        .final h2 {
+            font-size: 30px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .final p {
+            color: #666;
+
+            line-height: 1.5;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px 0;
+
+            color: #999;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           TABLET / DESKTOP
+        ========================= */
+
+        @media (min-width: 700px) {
+
+            .container {
+                max-width: 900px;
+            }
+
+
+            .hero h1 {
+                font-size: 52px;
+
+                max-width: 700px;
+            }
+
+
+            .hero-text {
+                max-width: 600px;
+
+                font-size: 19px;
+            }
+
+
+            .buttons {
+                max-width: 450px;
+            }
+
+
+            .advantages {
+                display: grid;
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            G-<span>SNaIL</span>
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>
+            Найдите нужный
+            <span>учебник</span>
+            быстро
+        </h1>
+
+
+        <p class="hero-text">
+            G-SNaIL помогает быстро и легко найти,
+            где проще скачать нужный вам учебник
+            на другом сайте.
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="https://g-snail-beta-1-0-m.onrender.com/"
+                class="button button-main"
+            >
+                📱 Открыть G-SNaIL
+            </a>
+
+
+            <a
+                href="https://g-snail-alpha-1-0.onrender.com/"
+                class="button button-secondary"
+            >
+                💻 Версия для компьютера
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="section">
+
+        <div class="about">
+
+            <h2>
+                Что такое G-SNaIL?
+            </h2>
+
+
+            <p>
+
+                <strong>G-SNaIL</strong> —
+                это сайт, на котором вы можете
+                найти, где проще скачать учебники
+                на других сайтах.
+
+                <br><br>
+
+                Без долгих поисков.
+                Легко и быстро.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADVANTAGES -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Почему G-SNaIL?
+        </h2>
+
+
+        <div class="advantages">
+
+
+            <div class="advantage">
+
+                <div class="advantage-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    Быстрый поиск
+                </h3>
+
+                <p>
+                    Найдите нужный учебник
+                    без долгого поиска.
+                </p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <div class="advantage-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Учебники
+                </h3>
+
+                <p>
+                    Ищите нужные учебные материалы
+                    в удобном формате.
+                </p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <div class="advantage-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Просто и удобно
+                </h3>
+
+                <p>
+                    Минимум действий —
+                    максимум удобства.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Как это работает?
+        </h2>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="number">
+                    1
+                </div>
+
+                <p>
+                    Откройте G-SNaIL.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="number">
+                    2
+                </div>
+
+                <p>
+                    Найдите нужный учебник.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="number">
+                    3
+                </div>
+
+                <p>
+                    Перейдите на подходящий сайт.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+
+    <section class="final">
+
+        <h2>
+            Попробуйте G-SNaIL
+        </h2>
+
+
+        <p>
+            Найдите нужный учебник
+            легко и быстро.
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="https://g-snail-beta-1-0-m.onrender.com/"
+                class="button button-main"
+            >
+                📱 Начать поиск
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 G-SNaIL
+
+    </footer>
+
+
+</div>
+
+</body>
+
+</html>
